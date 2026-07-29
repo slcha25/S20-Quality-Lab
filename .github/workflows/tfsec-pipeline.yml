@@ -13,5 +13,6 @@ jobs:
       - name: Run tfsec
         uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
         with:
-          tfsec_args: --soft-fail=false
+          # Remove --soft-fail=false, use only what you need
+          tfsec_args: --soft-fail  # This will NOT fail the pipeline on findings
           github_token: ${{ secrets.GITHUB_TOKEN }}
